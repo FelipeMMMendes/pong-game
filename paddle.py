@@ -3,30 +3,28 @@ from turtle import Turtle
 
 #variaveis flag para auxiliar na configuracao visual e posicional dos tracos
 COR = 'white'
-POS_PLAYER = (350,0)
-POS_PC = (-350,0)
 
 #a classe Paddle eh herdeira da Turtle
 class Paddle(Turtle):
-    def __init__(self):
+    def __init__(self,posicao):
         super().__init__()
         #instancia um traco
-        self.paddle= Turtle(shape='square')
+        self.shape('square')
         #muda o tamanho dele
-        self.paddle.shapesize(stretch_len=1,stretch_wid=5)
+        self.shapesize(stretch_len=1,stretch_wid=5)
         #muda a cor dele
-        self.paddle.color(COR)
+        self.color(COR)
         #faz com que nao deixe marcas por onde passar
-        self.paddle.penup()
-        #move cada um para um canto da tela
-        self.paddle.goto(POS_PLAYER)
+        self.penup()
+        #faz com que se mova para as coordenadas que passou
+        self.goto(posicao)
 
     def subir(self):
-        novoY = self.paddle.ycor() + 20
-        self.paddle.goto(self.paddle.xcor(),novoY)   
+        novoY = self.ycor() + 20
+        self.goto(self.xcor(),novoY)   
 
     def descer(self):
-        novoY = self.paddle.ycor() - 20
-        self.paddle.goto(self.paddle.xcor(),novoY)    
+        novoY = self.ycor() - 20
+        self.goto(self.xcor(),novoY)    
         
 

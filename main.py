@@ -14,15 +14,18 @@ tela.title("PONG")
 #desliga as animacoes de criacao do traco
 tela.tracer(0)
 
-#instancia um objeto do tipo Paddle
-traco = Paddle()
+#instancia dois objetos do tipo Paddle
+tracoDireito = Paddle((350,0))
+tracoEsquerdo = Paddle((-350,0))
 
 #faz com que a tela receba inputs do teclado
 tela.listen()
 
 #desce ou sobe o traco de acordo com os comandos
-tela.onkey(traco.subir,"Up")
-tela.onkey(traco.descer,"Down")
+tela.onkey(tracoDireito.subir,"Up")
+tela.onkey(tracoDireito.descer,"Down")
+tela.onkey(tracoEsquerdo.subir,"w")
+tela.onkey(tracoEsquerdo.descer,"s")
 
 #variavel para controlar a continuidade do jogo
 jogoAtivo = True
