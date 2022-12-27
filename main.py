@@ -44,7 +44,12 @@ while jogoAtivo:
     #detecta se a bola bateu nas bordas superiores ou inferiores
     if bola.pos()[1] > 280 or bola.pos()[1] < -280 :
         #aplica o metodo bounce
-        bola.bounce()
+        bola.bounceY()
+    #detectar colisao com os dois tracos
+    if (bola.distance(tracoDireito) < 50 and bola.xcor()) > 340 or (bola.distance(tracoDireito) < 50 and bola.xcor() < -340):
+        bola.bounceX()
+
+
         
 
 

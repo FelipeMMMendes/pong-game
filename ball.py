@@ -24,5 +24,10 @@ class Ball(Turtle):
         #move a bola para as novas coordenadas
         self.goto(novoX,novoY)
 
-    def bounce(self):
-        self.yMove *= -1      
+    #metodo para inverter o valor do Y em caso de colisao
+    def bounceY(self):
+        self.yMove *= -1
+
+    #metodo para inverter o valor do X em caso de colisao
+    def bounceX(self):
+        self.xMove *= -1            
