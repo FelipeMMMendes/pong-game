@@ -1,6 +1,8 @@
 #fazendo os imports necessarios
 from turtle import Screen
 from paddle import Paddle
+from ball import Ball
+import time
 
 #instancia um objeto da classe Screen
 tela = Screen()
@@ -18,6 +20,9 @@ tela.tracer(0)
 tracoDireito = Paddle((350,0))
 tracoEsquerdo = Paddle((-350,0))
 
+#instancia o objeto bola
+bola = Ball()
+
 #faz com que a tela receba inputs do teclado
 tela.listen()
 
@@ -30,8 +35,13 @@ tela.onkey(tracoEsquerdo.descer,"s")
 #variavel para controlar a continuidade do jogo
 jogoAtivo = True
 while jogoAtivo:
+    #faz o loop while dormir, para dar mais fluidez para o jogo
+    time.sleep(0.1)
     #faz com que a tela atualize a posicao do traco de maneira mais lenta, para parecer com o jogo
     tela.update()
+    #faz com que a bola se mova
+    bola.mover()
+
 
 #so fecha a tela quando o usuario clicar
 tela.exitonclick()

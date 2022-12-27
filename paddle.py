@@ -19,10 +19,12 @@ class Paddle(Turtle):
         #faz com que se mova para as coordenadas que passou
         self.goto(posicao)
 
+    #funcao para subir o traco
     def subir(self):
         novoY = self.ycor() + 20
         self.goto(self.xcor(),novoY)   
 
+    #funcao para descer o traco
     def descer(self):
         novoY = self.ycor() - 20
         self.goto(self.xcor(),novoY)    
