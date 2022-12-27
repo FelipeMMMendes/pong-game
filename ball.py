@@ -12,10 +12,17 @@ class Ball(Turtle):
         self.shape('circle')
         #muda a cor
         self.color('white')
+        #atributos auxiliares
+        self.xMove = 10
+        self.yMove = 10
 
     #metodo para mover a bola
     def mover(self):
         #Pega as coordenadas X e Y e soma elas
-        novoX = self.xcor() + 10
-        novoY = self.ycor() + 10
-        self.goto(novoX,novoY)    
+        novoX = self.xcor() + self.xMove
+        novoY = self.ycor() + self.yMove
+        #move a bola para as novas coordenadas
+        self.goto(novoX,novoY)
+
+    def bounce(self):
+        self.yMove *= -1      

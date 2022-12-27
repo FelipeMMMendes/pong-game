@@ -41,6 +41,11 @@ while jogoAtivo:
     tela.update()
     #faz com que a bola se mova
     bola.mover()
+    #detecta se a bola bateu nas bordas superiores ou inferiores
+    if bola.pos()[1] > 280 or bola.pos()[1] < -280 :
+        #aplica o metodo bounce
+        bola.bounce()
+        
 
 
 #so fecha a tela quando o usuario clicar
