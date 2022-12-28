@@ -30,4 +30,10 @@ class Ball(Turtle):
 
     #metodo para inverter o valor do X em caso de colisao
     def bounceX(self):
-        self.xMove *= -1            
+        self.xMove *= -1    
+
+        #metodo para fazer a bola voltar para a posicao original e inverter o rumo dela
+    def resetarBola(self):
+        self.goto(0,0)
+        self.bounceX()
+                          

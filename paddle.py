@@ -27,6 +27,6 @@ class Paddle(Turtle):
     #funcao para descer o traco
     def descer(self):
         novoY = self.ycor() - 20
-        self.goto(self.xcor(),novoY)    
+        self.goto(self.xcor(),novoY) 
         
 

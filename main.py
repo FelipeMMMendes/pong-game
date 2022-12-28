@@ -36,7 +36,7 @@ tela.onkey(tracoEsquerdo.descer,"s")
 jogoAtivo = True
 while jogoAtivo:
     #faz o loop while dormir, para dar mais fluidez para o jogo
-    time.sleep(0.1)
+    time.sleep(0.06)
     #faz com que a tela atualize a posicao do traco de maneira mais lenta, para parecer com o jogo
     tela.update()
     #faz com que a bola se mova
@@ -46,12 +46,16 @@ while jogoAtivo:
         #aplica o metodo bounce
         bola.bounceY()
     #detectar colisao com os dois tracos
-    if (bola.distance(tracoDireito) < 50 and bola.xcor()) > 340 or (bola.distance(tracoDireito) < 50 and bola.xcor() < -340):
+    if (bola.distance(tracoDireito) < 50 and bola.xcor()) > 320 or (bola.distance(tracoEsquerdo) < 50 and bola.xcor() < -320):
         bola.bounceX()
 
+    #detectar se a bola passou do lado esquerdo
+    if bola.xcor() < -380:
+        bola.resetarBola()
 
-        
-
+    #detectar se a bola passou do lado direito
+    if bola.xcor() > 380:
+        bola.resetarBola()
 
 #so fecha a tela quando o usuario clicar
 tela.exitonclick()
