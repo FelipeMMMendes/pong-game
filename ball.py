@@ -15,6 +15,7 @@ class Ball(Turtle):
         #atributos auxiliares
         self.xMove = 10
         self.yMove = 10
+        self.velBola = 0.1
 
     #metodo para mover a bola
     def mover(self):
@@ -28,12 +29,13 @@ class Ball(Turtle):
     def bounceY(self):
         self.yMove *= -1
 
-    #metodo para inverter o valor do X em caso de colisao
+    #metodo para inverter o valor do X em caso de colisao e aumenta a velocidade da mesma
     def bounceX(self):
-        self.xMove *= -1    
+        self.xMove *= -1
+        self.velBola *= 0.9    
 
         #metodo para fazer a bola voltar para a posicao original e inverter o rumo dela
     def resetarBola(self):
         self.goto(0,0)
+        self.velBola = 0.1
         self.bounceX()
-                          
